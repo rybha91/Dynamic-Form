@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+.field {
+    width: 100%;
+}
+.field:disabled {
+    width: 100%;
+    -webkit-appearance: textfield;
+    background-color: white;
+    border: 0.5px solid rgb(169, 169, 169);
+    padding: 1px;
+}
+.dynamic-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 4px;
+    table-layout: fixed;
+}
+.headerCol {
+    background-color: #999999;
+    text-align: center;
+    /*padding-left: 10px;*/
+}
+.summary-patient-left-div {
+    width: 70%;
+    float: left;
+    font-size: 0.8em;
+}
+.summary-patient-right-div {
+    width: 25%;
+    float: left;
+    margin-left: 25px;
+}
+.summary-patient-calender-div {
+    float: left;
+}
+.summary-patients-past-appointments-div {
+    float: left;
+    min-height: 100px;
+    width: 300px;
+    border: 1px solid black;
+}
+.summary-patient-notes-div {
+    float: left;
+    min-height: 100px;
+    width: 300px;
+    border: 1px solid black;
+}
+.mouse-pointer {
+    cursor:pointer;
+}
+
+.not-active {
+   pointer-events: none;
+   cursor: default;
+}
+
+.block-header1-notconfirmed {
+    color: red;
+}
+
+.block-header1-confirmed {
+    color: blue;
+}
+
+.block-header2-main-div {
+    /*overflow:auto; */
+    width: 20%;
+}
+.block-header1-calender-main-div {
+    overflow: auto;
+    height: 180px;
+    width: 300px;
+}
+.block-header1-calender-subelements-div {
+    margin-right: 10px;
+    float: left;
+}
+.calander-icon-div {
+    margin-top: 5px;
+    float: left;
+}
+.block-header-subelements-subheading-div {
+    margin-bottom: 0px;
+    padding-bottom: 0px; 
+}
+.block-header-subelements-heading-div {
+    margin-top: 10px;
+    padding-top: 0px;
+}
+
+.whitespace-nowrap {
+    overflow:auto; 
+    white-space: nowrap;
+}

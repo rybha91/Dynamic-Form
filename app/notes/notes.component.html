@@ -1,0 +1,11 @@
+<form #textarea="ngForm" (ngSubmit)="details(textarea.value)"> 
+<div class="textarea">
+    <textarea [(ngModel)]="name1" readonly=true  name="name1"></textarea>
+    </div>
+    <br/>
+    <textarea [(ngModel)]="name2" name="name2" type="textarea" ></textarea>
+
+  <footer>
+    <input type="submit" value="submit">
+  </footer>
+</form>

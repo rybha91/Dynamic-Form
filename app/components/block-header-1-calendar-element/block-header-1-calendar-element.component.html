@@ -1,0 +1,30 @@
+<div *ngIf="errorMsg;then thenBlock else elseBlock">
+</div>
+<ng-template #thenBlock>
+  <div>
+    <h4>{{errorMsg}}</h4>
+  </div>
+</ng-template>
+<ng-template #elseBlock>
+  <div class="block-header1-calender-main-div">
+    <div>
+      <h4>{{element.header}}</h4>
+    </div>
+    <div *ngFor="let subElement of element.subElements">
+      <div>
+        <div class="block-header1-calender-subelements-div whitespace-nowrap">
+          <div class="block-header-subelements-heading-div">
+            <small>-&nbsp;{{subElement?.date}}-&nbsp;{{subElement?.time}}&nbsp;&nbsp;{{subElement?.purpose}}</small>
+          </div>
+          <div class="block-header-subelements-subheading-div">
+            <small>{{subElement?.status}}&nbsp;&nbsp;{{subElement?.name}}</small>
+          </div>
+        </div>
+        <div class="calander-icon-div">
+          <!--<i class="fa fa-calendar fa-2x mouse-pointer" aria-hidden="true" [routerLink]="[subElement?.navPath]"></i>-->
+          <i class="fa fa-calendar fa-2x mouse-pointer" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

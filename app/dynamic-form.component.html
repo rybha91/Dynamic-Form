@@ -1,0 +1,23 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <table [ngClass]="uiElements.tableProperties.tableCssClass" >
+      <thead>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of uiElements.rows" [ngClass]="row.rowProperties.rowCssClass" >
+          <td *ngFor="let col of row.cols" [ngClass]="col.colProperties.colCssClass" attr.rowspan="{{col.colProperties.rowspan}}" attr.colspan="{{col.colProperties.colspan}}">
+            <app-df-question [question]="col.question" [form]="form"></app-df-question>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="form-row">
+      <button type="submit" [disabled]="!form.valid">Add Patient</button>
+    </div>
+  </form>
+
+  <div *ngIf="payLoad" class="form-row">
+    <strong>Saved the following values</strong><br>{{payLoad}}
+  </div>
+</div>

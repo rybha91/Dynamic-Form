@@ -1,0 +1,41 @@
+<div class="form-group" [formGroup]="form">
+  <div>
+    <!--<div style="float:left">
+      <label [attr.for]="question.key">{{question.label}}</label>
+    </div>-->
+    <div>
+      <div [ngSwitch]="question.controlType">
+
+        <input  [ngClass]="question.uiElementCssClass" *ngSwitchCase="'textbox'" [formControlName]="question.key" [id]="question.key" [type]="question.type">
+
+        <select [ngClass]="question.uiElementCssClass" [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
+      <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+    </select>
+
+
+
+         <div *ngSwitchCase="'checkbox'">
+            <input [ngClass]="question.uiElementCssClass" type="checkbox" [id]="question.key" [formControlName]="question.key">{{question.label}}
+        </div>
+
+        <div *ngSwitchCase="'radio'">
+          <div [ngClass]="question.uiElementCssClass" *ngFor="let opt of question.options">
+            <input type="radio" [id]="question.key" [formControlName]="question.key" [value]="opt.key">{{opt.value}}
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'label'">
+          <label [ngClass]="question.uiElementCssClass" >{{question.label}}</label>
+        </div>
+
+        <div *ngSwitchCase="'textarea'">
+          <textarea [ngClass]="question.uiElementCssClass" [formControlName]="question.key" [id]="question.key" > </textarea>
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+
+  <div class="errorMessage" *ngIf="!isValid && !question.uiElementIsReadOnly">{{question.label}} is required</div>
+</div>
